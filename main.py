@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from pydantic_ai import Agent
 from pydantic_ai.models.openai import OpenAIChatModel
@@ -7,11 +8,15 @@ from pydantic_ai.messages import ModelMessage
 
 import tools
 
+load_dotenv()
+
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+
 system_prompt = """你是一名资深的软件工程师，希望你能用严谨抽象的思维来分析问题，给出清晰的解决方案。"""
 
 model = OpenAIChatModel(
     'deepseek-chat',
-    provider=DeepSeekProvider(api_key=os.getenv('DEEPSEEK_API_KEY')),
+    provider=DeepSeekProvider(api_key=DEEPSEEK_API_KEY),
 )
 
 agent = Agent(
