@@ -20,6 +20,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "dotenv" },
+    { name = "mcp" },
     { name = "pydantic-ai" },
     { name = "pydantic-ai-slim", extra = ["web"] },
 ]
@@ -27,6 +28,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dotenv", specifier = ">=0.9.9" },
+    { name = "mcp", specifier = ">=1.27.0" },
     { name = "pydantic-ai", specifier = ">=1.87.0" },
     { name = "pydantic-ai-slim", extras = ["web"], specifier = ">=1.87.0" },
 ]
